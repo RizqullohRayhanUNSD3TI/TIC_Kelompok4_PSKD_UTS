@@ -1,0 +1,17 @@
+{
+    "name": "user/enkripsidekripsi",
+    "require": {
+        "miladrahimi/phpcrypt": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "User\\Enkripsidekripsi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rizqulloh Rayhan Ferdiansyah",
+            "email": "rizqullohrayhan@student.uns.ac.id"
+        }
+    ]
+}
