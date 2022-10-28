@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 session_start();
-require '../../PHPAES/vendor/autoload.php';
+require 'PHPAES/vendor/autoload.php';
 use PhpAes\Aes;
 
 ?>
