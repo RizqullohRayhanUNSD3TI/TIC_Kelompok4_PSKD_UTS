@@ -67,25 +67,19 @@
 
 </html>
 <?php
+require('koneksi.php');
 if(isset($_POST['login']))
 {
-    $username = mysqli_real_escape_string($koneksi, $_POST['username']);
-    $password = mysqli_real_escape_string($_POST['password']);
-    $pswd = md5($password);
-    $q=mysqli_query($koneksi,"SELECT * FROM data WHERE username='$username' and password='$password'");
-    if($q)
+    $email = $_POST['email'];
+    $password = md5($_POST['password']);
+    $q = mysqli_query($koneksi,"SELECT * FROM data WHERE email='$email' AND password='$password'");
+    if($q==1)
     {
-        $row=mysqli_fetch_array($q);
-        if($row['username']==$username && $row['password']==$pswd)
-        {
-            echo"<script>alert('Login Berhasil !')</script>";
-            echo"<meta http-equiv='refresh' content='0'>";
-        }
-        else
-        {
-            echo"<script>alert('Data Tidak Ditemukan !')</script>";
-            echo"<meta http-equiv='refresh' content='0'>";
-        }
+        echo"<script>window.alert('Login Berhasil !')</script>";
+        header('Location:index2.html');
+    }else{
+        echo"<script>window.alert('Username atau password salah !')</script>";
+        echo"<meta http-equiv='refresh' content='0'>";
     }
 }
 ?>

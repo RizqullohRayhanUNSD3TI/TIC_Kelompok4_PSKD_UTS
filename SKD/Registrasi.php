@@ -80,25 +80,25 @@
 <?php
 require('koneksi.php');
 if (isset($_POST['registrasi'])) {
-    $nama = mysqli_real_escape_string($koneksi, $_POST['nama']);
-    $alamat = mysqli_real_escape_string($koneksi, $_POST['alamat']);
-    $nomor = mysqli_real_escape_string($koneksi, $_POST['nomor']);
-    $email = mysqli_real_escape_string($koneksi, $_POST['email']);
-    $pass1 = mysqli_real_escape_string($koneksi, $_POST['pass1']);
-    $pass2 = mysqli_real_escape_string($koneksi, $_POST['pass2']);
+    $nama = $_POST['nama'];
+    $alamat = $_POST['alamat'];
+    $nomor = $_POST['nomor'];
+    $email = $_POST['email'];
+    $pass1 = $_POST['pass1'];
+    $pass2 = $_POST['pass2'];
     $password = md5($pass1);
     
     if($pass1==$pass2){
         $hasil = mysqli_query($koneksi,"INSERT INTO data (nama, alamat, nomor, email, password) 
         VALUES ('$nama', '$alamat', $nomor, '$email', '$password'); "); 
         if($hasil==1){
-            echo "<script>alert('Data Berhasil Diinput !')</script>";
+            echo "<script>window.alert('Registrasi Berhasil !')</script>";
             header('Location:Login.php');
         }else{
-            echo "<script>alert('Data Gagal Diinput !')</script>";
+            echo "<script>alert('Registrasi Gagal !')</script>";
         }
     }else{
-        echo "<script>alert('Konfirmasi Password Salah !')</script>";
+        echo "<script>window.alert('Konfirmasi Password Salah !')</script>";
     }
 }
 
