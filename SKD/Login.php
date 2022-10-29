@@ -73,7 +73,8 @@ if(isset($_POST['login']))
     $email = $_POST['email'];
     $password = md5($_POST['password']);
     $q = mysqli_query($koneksi,"SELECT * FROM data WHERE email='$email' AND password='$password'");
-    if($q==1)
+    $data = mysqli_num_rows($q);
+    if($data==1)
     {
         echo"<script>window.alert('Login Berhasil !')</script>";
         header('Location:index2.html');

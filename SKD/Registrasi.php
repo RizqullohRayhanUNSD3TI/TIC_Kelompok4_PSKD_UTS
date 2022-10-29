@@ -63,11 +63,11 @@
             </div>
             <div class="form-field d-flex align-items-center">
                 <span class="fas fa-key"></span>
-                <input type="pass1" name="password" id="pwd" placeholder="Password" required>
+                <input type="password" name="pass1" id="pwd" placeholder="Password" required>
             </div>
             <div class="form-field d-flex align-items-center">
                 <span class="fas fa-key"></span>
-                <input type="pass2" name="passwordConfirm" id="passwordConfirm" placeholder="Password Confirm" required>
+                <input type="password" name="pass2" id="passwordConfirm" placeholder="Password Confirm" required>
             </div>
             <button class="btn mt-3" name="registrasi" type="submit">Registration</button>
         </form>
